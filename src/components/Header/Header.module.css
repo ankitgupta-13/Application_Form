@@ -1,0 +1,14 @@
+.header{
+    height: 80px;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+
+}
+.header h1{
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
