@@ -35,6 +35,7 @@ const Content = () => {
       } else {
         console.log(password);
         // alert(confirm);
+        alert("Form Submitted!!!")
       }
     }
   };
@@ -91,6 +92,7 @@ const Content = () => {
             <div className={styles.icon}>
               <Input
                 type={visibility ? "text" : "password"}
+                value={password}
                 placeholder="Enter Password"
                 onChange={(e) => setPassword(e.target.value)}
                 startAdornment={
