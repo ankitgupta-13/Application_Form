@@ -16,13 +16,10 @@ const Content = () => {
   const [visibility, setVisibility] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name);
+    
     // alert(name);
-    console.log(last);
     // alert(last);
-    console.log(email);
     // alert(email);
-    console.log(number);
     // alert(number);
     if (password.length < 5) {
       alert("Password Too Short");
@@ -36,6 +33,11 @@ const Content = () => {
         console.log(password);
         // alert(confirm);
         alert("Form Submitted!!!")
+        console.log(name);
+        console.log(last);
+        console.log(email);
+        console.log(number);
+        console.log(password);
       }
     }
   };
