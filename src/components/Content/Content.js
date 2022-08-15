@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import styles from "./Content.module.css";
+import Input from "@mui/material/Input";
+import InputAdornment from "@mui/material/InputAdornment";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import LockIcon from "@mui/icons-material/Lock";
 
 const Content = () => {
   const [name, setName] = useState("");
@@ -8,25 +13,29 @@ const Content = () => {
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
+  const [visibility, setVisibility] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(name);
     // alert(name);
+    console.log(last);
     // alert(last);
+    console.log(email);
     // alert(email);
+    console.log(number);
     // alert(number);
-    if(password.length<5){
-        alert("Password Too Short");
-    }
-    else{
-        alert(password);
-        if(password!=confirm){
-            alert("Password does not match")
-            setPassword("")
-            setConfirm("")
-        }
-        else{
-            alert(confirm);
-        }
+    if (password.length < 5) {
+      alert("Password Too Short");
+    } else {
+      // alert(password);
+      if (password !== confirm) {
+        alert("Password does not match");
+        setPassword("");
+        setConfirm("");
+      } else {
+        console.log(password);
+        // alert(confirm);
+      }
     }
   };
   return (
@@ -79,13 +88,33 @@ const Content = () => {
         <span>
           <div className={styles.row}>
             <label htmlFor="">Password*</label>
-            <input
-              type="password"
-              placeholder="Enter Password"
-              value={password}
-              required
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <div className={styles.icon}>
+              <Input
+                type={visibility ? "text" : "password"}
+                placeholder="Enter Password"
+                onChange={(e) => setPassword(e.target.value)}
+                startAdornment={
+                <InputAdornment position="start">
+                  <LockIcon className="text-secondary" />
+                </InputAdornment>
+              }
+                endAdornment={
+                  <InputAdornment position="end">
+                    {!visibility ? (
+                      <VisibilityIcon
+                        style={{ cursor: "pointer" }}
+                        onClick={() => setVisibility(!visibility)}
+                      />
+                    ) : (
+                      <VisibilityOffIcon
+                        style={{ cursor: "pointer" }}
+                        onClick={() => setVisibility(!visibility)}
+                      />
+                    )}
+                  </InputAdornment>
+                }
+              />
+            </div>
           </div>
           <div className={styles.row}>
             <label htmlFor="">Confirm Password*</label>
