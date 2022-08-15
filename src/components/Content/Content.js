@@ -30,14 +30,13 @@ const Content = () => {
         setPassword("");
         setConfirm("");
       } else {
-        console.log(password);
         // alert(confirm);
         alert("Form Submitted!!!")
-        console.log(name);
-        console.log(last);
-        console.log(email);
-        console.log(number);
-        console.log(password);
+        console.log(`"First Name :" ${name}`);
+        console.log(`Last Name : ${last}`);
+        console.log(`Email : ${email}`);
+        console.log(`Phone Number : ${number}`);
+        console.log(`Password : ${password}`);
       }
     }
   };
